@@ -10,7 +10,7 @@ You can run it subsequently to do all manner of foul magic.
 
 * Fork it/Clone it/Download it, whatever
 * bundle install
-* Edit the_clonus_horrors.yml until you are content.  It has a few of the thousand or so repos I carry around with me in it to get you started.
+* Edit the_clonus_horrors.yml until you are content.  It has a few of the repos I carry around with me in it to get you started.  Your brain could not stand the awesome fighting force that is my full the_clonus_horrors.yml file.
 
 # First Run
 * Run ./parts
