@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby
+require 'bundler'
+Bundler.setup
+
+require 'active_support'
+require 'yaml'
+require 'fileutils'
+require 'pathname'
+
+RootPath = Pathname.new(File.expand_path('.'))
+GithubInfo = YAML.load_file(RootPath.join('the_clonus_horror.yml'))
+  
+def make_with_the_awesome(*args)
+  command = args.join(' ')
+
+  if command.nil?
+    puts "No command given, just cloning any repos not already on disk"
+  end
+
+  FileUtils.cd(RootPath) do
+
+    GithubInfo.each do |username, repos|
+      repos.each do |repo|
+
+        repo_path = "#{username}-#{repo}"
+
+        if File.exist?(repo_path)
+          FileUtils.cd(repo_path) do
+            ICommandTheeTo command, repo_path 
+          end
+        else
+          clone_url = "git://github.com/#{username}/#{repo}.git"
+          ICommandTheeTo "git clone #{clone_url} #{repo_path}"
+        end
+
+      end
+    end
+
+  end
+end
+
+def ICommandTheeTo(command, repo_path=nil)
+  return if command.strip == ''
+  path = repo_path ? " in #{repo_path}" : nil
+  puts "Executing '#{command}'#{path}"
+  puts '-' * 40
+  system command
+  puts
+end
+
+make_with_the_awesome(ARGV)

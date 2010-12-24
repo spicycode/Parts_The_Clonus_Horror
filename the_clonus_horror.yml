@@ -1,0 +1,23 @@
+--- 
+ryanbriones: 
+- git-pair
+- emacs.d
+tpope: 
+- vim-surround
+- vim-rails
+- vim-cucumber
+- vim-git
+- vim-unimpaired
+- vim-pastie
+- vim-speeddating
+- vim-abolish
+- vim-fugitive
+- vim-haml
+- vim-abolish
+motemen: 
+- git-vim
+Shougo: 
+- vimshell
+- vimproc
+- neocomplcache
+- shougo-s-github
