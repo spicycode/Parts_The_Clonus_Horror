@@ -11,4 +11,12 @@ You can run it subsequently to do all manner of foul magic.
 * Fork it/Clone it/Download it, whatever
 * bundle install
 * Edit the_clonus_horrors.yml until you are content.  It has a few of the thousand or so repos I carry around with me in it to get you started.
+
+# First Run
 * Run ./parts
+** All your repos are cloned, if they already exist nothing is done
+
+# Second through Infinity Run
+* ./parts git update or ./parts ls or ./parts my-hands-are-bananas
+** You get the idea
+
